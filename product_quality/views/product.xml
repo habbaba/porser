@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="quality_tree" model="ir.ui.view">
+        <field name="name">product.quality.tree</field>
+        <field name="model">product.quality</field>
+        <field name="arch" type="xml">
+            <tree sample="1" editable="bottom">
+                <field name="name"/>
+                <field name="quality_code"/>
+            </tree>
+        </field>
+        </record>
+
+        <record id="template_form" model="ir.ui.view">
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//button[@name='action_open_label_layout']" position="after">
+                <button string="Create Quality Products" name="action_create_product_quality" type="object"/>
+            </xpath>
+            <xpath expr="//page[last()]" position="after">
+                <page name="qualities" string="Qualities">
+                    <field name="product_quality_ids" widget="one2many_list"/>
+                </page>
+            </xpath>
+        </field>
+        </record>
+
+        <record id="action_quality" model="ir.actions.act_window">
+        <field name="name">Qualities</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">product.quality</field>
+        <field name="view_mode">tree</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Click to create a new quality.
+                </p>
+            </field>
+        </record>
+        <menuitem id="menu_quality" parent="stock.menu_product_in_config_stock" action="action_quality"/>
+    </data>
+</odoo>

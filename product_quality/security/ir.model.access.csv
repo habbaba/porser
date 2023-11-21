@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+product_quality_read,product_quality_read,model_product_quality,base.group_user,1,0,0,0
+product_quality_user,product_quality_user,model_product_quality,mrp.group_mrp_user,1,1,1,1
+separate_by_quality_user,separate_by_quality,model_separate_by_quality,base.group_user,1,1,1,1
+mrp_product_quality_next,mrp_product_quality_next,model_mrp_product_quality_next,base.group_user,1,1,1,1
