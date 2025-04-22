@@ -5,8 +5,8 @@
 {
     'name': 'Product: Quality',
     'version': '1.0',
-    'author': 'Projet',
-    'website': 'https://bulutkobi.io',
+    'author': 'broadmax',
+    'website': 'https://broadmax.com.tr',
     'license': 'LGPL-3',
     'sequence': 1455,
     'category': 'Sales/Products',
